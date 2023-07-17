@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Task List | Home
+{% endblock %}
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+{% block content %}
+    <div class="card">
+        <h1> Todo App</h1>
+        
+        <div id="todo-form">
+            <form action="{% url 'todo' %}" method="post">
+                {% csrf_token %}
+                {{ form.title }}
+                <button type="submit" class="btn"> <i class="fas fa-plus"></i></button> 
+            </form>
+        </div>
+        
+        <div class="task-con">
+            <ul>
+                {% for task in tasks %}
+                <form method="post" action="{% url 'task_completed' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="completed" id="completed-{{ task.id }}" {% if task.completed %}checked{% endif %} onchange="this.form.submit()">
+                    <li class="{% if task.completed %}completed{% endif %}">
+                   <label for="completed-{{ task.id }}">
+                        {{ task.title }} 
+                       
+                       <span> {{ task.created }}</span>
+                       
+                   <button type="submit" class="btn" form="form1"> <i class="fas fa-trash"></i></button>
+                     </form>
+                     <button class="modal-btn" onclick="openModal('modal-{{ task.id }}')" type="button"><i class="fa fa-refresh"></i></button>
+                     
+                 <div id="modal-{{ task.id }}" class="modal">
+                     <div class="form-modal">
+                         <form method="post" action="{% url 'task_update' task.id %}">
+                             {% csrf_token %}
+                             <input type="text" name="updated_title" value="{{ task.title }}" class="update" autofocus="true">
+                             <button type="submit" class="btn-2"> <i class="fas fa-refresh"> </i></button>
+                         </form>
+                     </div>
+                 </div>
+                   </label>
+                    </li>
+                     <form action="{% url 'task_delete' task.id %}" method="post" class="form1" id="form1">
+                {% csrf_token %}
+                        </form>
+                        {% empty %}
+                            <li> No task yet...</li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+ 
