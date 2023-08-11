@@ -1,12 +1,7 @@
-amqp==5.1.1
-android==1.0
+
 asgiref==3.7.2
-astroid==2.8.2
-audiostream==0.2
-beautifulsoup4==4.12.2
 billiard==4.1.0
 blinker==1.6.2
-celery==5.3.1
 certifi==2023.5.7
 channels==4.0.0
 charset-normalizer==3.1.0
@@ -14,11 +9,8 @@ click==8.1.3
 click-didyoumean==0.3.0
 click-plugins==1.1.1
 click-repl==0.3.0
-cmake @ file:///home/n0n3m4/Desktop/Pydroid/zBuildPrepared/cmake-3.20.3-py3-none-any.whl
 distro==1.6.0
 Django==4.2.2
-django-background-task==0.1.8
-django-background-tasks==1.2.5
 django-ckeditor==6.6.1
 django-compat==1.0.15
 django-js-asset==2.1.0
