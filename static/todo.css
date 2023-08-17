@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    background: #8083ff;
+}
+
+.card {
+    width: 100%;
+    max-width: 430px;
+    padding: 20px 10px;
+    height: 100%;
+    background: white;
+    margin: 50px auto;
+}
+
+.card h1 {
+    color: #8083ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+card #todo-form form {
+    width: 100%;
+    display: inline;
+    height: 10vh;
+    margin-top: 20px;
+    position: relative;
+}
+
+.card #todo-form form .form-input {
+    width: 70%;
+    height: 100%;
+    padding: 14px 10px;
+    color: #333;
+    border: 1px solid grey;
+    margin: 16px 5px;
+    outline: none;
+}
+
+.card #todo-form form .form-input:focus, .update:focus {
+    box-shadow: 0 0 4px #8083ff;
+    border: none;
+    outline: none;
+}
+
+.card #todo-form form .btn {
+    display: inline;
+    width: 25%;
+    height: 100%;
+    background: #8083ff;
+    border: none;
+    outline: none;
+    padding: 13px;
+}
+
+.card #todo-form form .btn i {
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+.task-con ul form li, ul li .modal  {
+    width: 100%;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #8083ff, #4D70EF);
+    background-size: 30px 60px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+    padding: 15px;
+    padding-left: 50px;
+    margin-top: 5px;
+    position: relative;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    padding-right: 75px;
+}
+
+
+.task-con ul form li span {
+    font-size: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.task-con ul {
+    position: relative;
+}
+
+.task-con ul form li .btn, .modal-btn {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.task-con ul form li .btn i, .modal-btn i {
+    color: #8083ff;
+    font-size: 1.3rem;
+}
+
+.task-con ul form li .modal-btn {
+    right: 15%;
+}
+
+ul li .modal {
+    position: absolute;
+    left: -150%;
+    top: 0;
+    background-size: 30px 70px;
+    z-index: 1;
+    height: 45px;
+}
+
+ul li .modal .form-modal {
+    position: absolute;
+    display: flex;
+    top: 0;
+    transition: all 4s;
+}
+
+ul li .modal .form-modal .update {
+    padding: 10px 15px;
+    height: 100%;
+    border: 1px solid grey;
+    color: #111;
+    width: 60%;
+    margin: 0 5px 0 0;
+}
+
+ul li .modal.left {
+    left: 0;
+}
+
+
+ul li .modal .form-modal .btn-2 {
+    width: 30%;
+    height: 5vh;
+    padding: 10px;
+    background: #8083ff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.task-con ul form input[type=checkbox] {
+    position: absolute;
+    left: 5px;
+    accent-color: #8083ff;
+    width: 20px;
+    height: 70px;
+    z-index: 1;
+    background: transparent;
+}
+
+.task-con ul form input[type=checkbox]:checked {
+    opacity: 0.4;
+}
+
+.task-con ul form li.completed {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
